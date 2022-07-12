@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
- 
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
 <configuration>
 	<properties resource="com/jsp/properties/jdbc.properties" />
 	
 					
 	<typeAliases>
 		<typeAlias type="java.lang.String" alias="str" />
-		<typeAlias type="java.lang.Integer" alias="int" />
-		
+		<typeAlias type="java.lang.Integer" alias="int" />		
 		<typeAlias type="com.jsp.dto.MemberVO"  alias="member"/>	
-		
+		<typeAlias type="com.jsp.dto.MenuVO" alias="menu" />
+		<typeAlias type="com.jsp.dto.NoticeVO" alias="notice" />
+		<typeAlias type="com.jsp.dto.BoardVO" alias="board" />
+		<typeAlias type="com.jsp.dto.ReplyVO" alias="reply" />
+		<typeAlias type="com.jsp.dto.PdsVO" alias="pds" />
+		<typeAlias type="com.jsp.dto.AttachVO" alias="attach" />
 		
 	</typeAliases>
 	
@@ -34,6 +38,19 @@
 	
 	<mappers>
 		<mapper resource="com/jsp/mybatis/mappers/Member-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/Menu-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/Notice-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/Board-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/Reply-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/Pds-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/Attach-Mapper.xml"/>
 	</mappers>
 	
 </configuration>
+
+
+
+
+
+
+

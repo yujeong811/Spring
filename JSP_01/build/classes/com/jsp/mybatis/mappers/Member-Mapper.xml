@@ -14,4 +14,7 @@
 		from board
 		order by regDate desc		
 	</select>
+	<select id="selectBoardDetail" parameterType="int">
+		select * from board where board_no=#{bno}
+	</select>
 </mapper>  

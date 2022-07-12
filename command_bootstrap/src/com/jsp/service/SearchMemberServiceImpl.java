@@ -18,9 +18,19 @@ import com.jsp.exception.NotMatchSearchCriteria;
 
 public class SearchMemberServiceImpl extends MemberServiceImpl {
 
-	private SqlSessionFactory sqlSessionFactory=new OracleMybatisSqlSessionFactory();
-	private SearchMemberDAO memberDAO = new SearchMemberDAOImpl();
-	
+	private SqlSessionFactory sqlSessionFactory;
+	private SearchMemberDAO memberDAO;
+		
+	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+		super.setSqlSessionFactory(sqlSessionFactory);
+		this.sqlSessionFactory = sqlSessionFactory;
+	}
+
+	public void setMemberDAO(SearchMemberDAO memberDAO) {
+		super.setMemberDAO(memberDAO);
+		this.memberDAO = memberDAO;
+	}
+
 	@Override
 	public Map<String,Object> getMemberListForPage(Criteria cri) throws Exception {
 		
@@ -45,7 +55,7 @@ public class SearchMemberServiceImpl extends MemberServiceImpl {
 				dataMap.put("pageMaker",pageMaker);
 				
 				session.commit();
-				
+				System.out.println("[ServiceImpl : endPage] => " + pageMaker.getEndPage());
 			}catch(Exception e) {
 				session.rollback();
 				e.printStackTrace();

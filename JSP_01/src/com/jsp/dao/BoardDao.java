@@ -10,7 +10,7 @@ import com.jsp.vo.Board;
 public interface BoardDao {
 	List<Board> selectBoardList(SqlSession session) throws Exception;
 	List<Board> selectBoardList(SqlSession session,Criteria cri) throws Exception;
-	
+//	List<Board> selectBoardDetail
 	// 일반 리스트 전체 개수
 	int selectBoardListCount(SqlSession session) throws Exception;
 }
